@@ -5,7 +5,6 @@
   <title>TiendaMoto Rental</title>
 
   <style>
-    /* Fondo mitad verde / mitad blanco */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -13,7 +12,6 @@
       background: linear-gradient(#237a67 50%, white 50%);
     }
 
-    /* Header centrado */
     header {
       background: #333;
       color: white;
@@ -24,159 +22,98 @@
       align-items: center;
     }
 
-    h1 {
+    header h1 {
       margin: 0;
-      font-size: 48px;
-      text-align: center;
+      font-size: 42px;
     }
 
     .direccion {
       font-size: 14px;
-      color: white;
+      margin-top: 5px;
     }
 
-    /* Catálogo */
     .catalogo {
       display: flex;
       justify-content: space-between;
-      padding: 20px;
+      gap: 20px;
+      padding: 30px;
       max-width: 1200px;
       margin: 0 auto;
     }
 
     .moto {
-      flex: 0 1 30%;
+      flex: 1;
       background: white;
-      border: 1px solid #ccc;
-      border-radius: 8px;
+      border-radius: 10px;
       text-align: center;
-      padding: 10px;
-      box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
-      box-sizing: border-box;
+      padding: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     }
 
     .moto img {
       width: 100%;
       height: auto;
-      border-radius: 5px;
+      border-radius: 8px;
+    }
+
+    .moto h3 {
+      margin: 15px 0 5px;
     }
 
     .precio {
+      font-size: 18px;
       font-weight: bold;
       color: #2a9d8f;
-      margin-top: 5px;
     }
 
     footer {
       background: #333;
       color: white;
       text-align: center;
-      padding: 10px;
-      margin-top: 20px;
+      padding: 15px;
+      margin-top: 40px;
     }
 
-    /* Responsive */
     @media (max-width: 900px) {
       .catalogo {
         flex-direction: column;
-        align-items: center;
       }
-      .moto {
-        flex: 0 1 80%;
-        margin-bottom: 20px;
-      }
-    }
-
-    /* Login */
-    #login {
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: #237a67;
-    }
-
-    #login-box {
-      background: white;
-      padding: 30px;
-      border-radius: 10px;
-      text-align: center;
-      box-shadow: 0 5px 10px rgba(0,0,0,0.3);
-    }
-
-    #login-box input {
-      padding: 10px;
-      width: 200px;
-    }
-
-    #login-box button {
-      padding: 10px 20px;
-      margin-top: 10px;
-      cursor: pointer;
     }
   </style>
 </head>
 
 <body>
 
-<!-- LOGIN -->
-<div id="login">
-  <div id="login-box">
-    <h2>Acceso TiendaMoto Rental</h2>
-    <input type="password" id="password" placeholder="Código de acceso">
-    <br><br>
-    <button onclick="checkPassword()">Entrar</button>
-    <p id="error" style="color:red;"></p>
-  </div>
-</div>
-
-<!-- CONTENIDO -->
-<div id="contenido" style="display:none;">
-
   <header>
     <h1>TiendaMoto Rental</h1>
     <div class="direccion">Julieta Lanteri 1715, CABA</div>
   </header>
 
-  <div class="catalogo">
+  <section class="catalogo">
+
     <div class="moto">
-      <img src="motos/moto1.jpeg" alt="Royal Enfield Continental GT 650">
+      <img src="motos/moto1.jpg" alt="Royal Enfield Continental GT 650">
       <h3>Royal Enfield Continental GT 650</h3>
-      <div class="precio">$50/día</div>
+      <div class="precio">$50 / día</div>
     </div>
 
     <div class="moto">
-      <img src="motos/moto2.jpeg" alt="Moto Guzzi V7 50th Aniversario">
+      <img src="motos/moto2.jpg" alt="Moto Guzzi V7 50th Aniversario">
       <h3>Moto Guzzi V7 50th Aniversario</h3>
-      <div class="precio">$70/día</div>
+      <div class="precio">$70 / día</div>
     </div>
 
     <div class="moto">
-      <img src="motos/moto3.jpeg" alt="Ducati Hypermotard 821 SP">
+      <img src="motos/moto3.jpg" alt="Ducati Hypermotard 821 SP">
       <h3>Ducati Hypermotard 821 SP</h3>
-      <div class="precio">$40/día</div>
+      <div class="precio">$40 / día</div>
     </div>
-  </div>
+
+  </section>
 
   <footer>
     © TiendaMotoArgentina Rental
   </footer>
-
-</div>
-
-<script>
-  function checkPassword() {
-    const pass = document.getElementById("password").value;
-    const correcto = "moto123"; // 
-
-    if (pass === correcto) {
-      document.getElementById("login").style.display = "none";
-      document.getElementById("contenido").style.display = "block";
-    } else {
-      document.getElementById("error").innerText = "Código incorrecto";
-    }
-  }
-</script>
 
 </body>
 </html>
